@@ -36,9 +36,9 @@ var Page = db.define('page', {
             } else {
                 // Generates random 5 letter string
                 page.urlTitle = Math.random().toString(36).substring(2, 7);
-                }
             }
         }
+    }
 });
 
 
@@ -53,6 +53,8 @@ var User = db.define('user', {
         allowNull: false
     }
 });
+
+Page.belongsTo(User, { as: 'author' });
 
 module.exports = {
   Page: Page,

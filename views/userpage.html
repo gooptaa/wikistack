@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h3>Artifacts</h3>
+  <h3>Articles</h3>
+  <h3>{{findpage.title}} <small> {{data[0].dataValues.name}}</small></h3>
+  <h3>{{findpage.title}} <small> {{data[0].dataValues.email}}</small></h3>
+  <hr>
+
+<ul>
+  {% for page in data[1] %}
+    <li><a href="/{{ page.urlTitle}}">{{ page.title }}</a></li>
+  {% endfor %}
+</ul>
+</ul>
+{% endblock %}
